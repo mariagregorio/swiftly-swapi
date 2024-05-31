@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --gutter: 2rem;
+    --bg-color: #fafafa;
+    --font-color: #212121;
+    --border-color: #bdbdbd;
+    --border-color-highlight: #757575;
+    --error-color: #E57373;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #212121;
+        --font-color: #F5F5F5;
+        --border-color: #616161;
+        --border-color-highlight: #E0E0E0;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 1rem 2rem;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.characters-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    box-sizing: border-box;
+    width: calc(25% - var(--gutter));
+}
+
+.card .title {
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.card .body .item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card .body .item span.label {
+    display: block;
+    font-size: 11px;
+    margin-top: 0.5rem;
+}
+
+.card .body .item span.value {
+    display: block;
+    font-size: 16px;
+}
+
+.search-bar {
+    margin: auto;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    width: 80%;
+}
+
+.search-bar input[type='text'] {
+    width: 100%;
+    background-color: var(--bg-color);
+    border: 0;
+    border-bottom: 2px solid var(--border-color);
+    padding: 0.75rem 0.5rem;
+    color: var(--font-color);
+    font-size: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+.search-bar input[type='text']:focus {
+    border-bottom: 2px solid var(--border-color-highlight);
+    outline: none;
+}
+
+.not-found {
+    font-size: 22px;
+    text-align: center;
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 22px;
+    text-align: center;
+}
+
+.loading {
+    font-size: 22px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .card {
+        width: calc(25% - var(--gutter));
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - var(--gutter));
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
